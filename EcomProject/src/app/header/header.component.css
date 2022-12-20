@@ -1,0 +1,50 @@
+.nav {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+element.style{
+    margin-top: 5px;
+    flex: 1;
+    display: flex;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.nav h1 {
+    color: blueviolet;
+    margin-top: 0px;
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.nav ul{
+    display: inline-flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.nav li{
+    padding-top: 15px;
+    padding-left: 15px;
+}
+.nav a{
+    text-decoration: none;
+    color: blueviolet;
+}
+.nav-search{
+    margin-top: 12px;
+}
+.nav nav-search input{
+    flex: 1;
+    color:blueviolet;
+    border: 1px solid blueviolet;
+    height: 39px;
+    border-right: 0px;
+}
+.nav nav-search button{
+    flex: 1;
+    color:blueviolet;
+    border: 1px solid blueviolet;
+    height: 40px;
+    border-left: 0px;
+}
