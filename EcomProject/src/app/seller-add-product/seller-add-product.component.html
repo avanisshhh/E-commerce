@@ -1,0 +1,50 @@
+<div class="add-product">
+  <h1>Add New Product</h1>
+  <p class="message_p">{{addProductMessage}}</p>
+  <form #addProduct="ngForm" (ngSubmit)="submit(addProduct.value)" class="common-form">
+    <input
+      class="form-input"
+      ngModel
+      name="name"
+      type="text"
+      placeholder="Enter your Product"
+    />
+    <input
+      class="form-input"
+      ngModel
+      name="price"
+      type="text"
+      placeholder="Enter Product price"
+    />
+    <input
+      class="form-input"
+      ngModel
+      name="category"
+      type="text"
+      placeholder="Enter Product category"
+    />
+    <input
+    class="form-input"
+    ngModel
+    name="color"
+    type="text"
+    placeholder="Enter Product color"
+  />
+    <textarea
+      class="form-input"
+      ngModel
+      name="description"
+      type="text"
+      placeholder="Enter Product description"
+    ></textarea>
+    <input
+      class="form-input"
+      ngModel
+      name="image"
+      type="text"
+      placeholder="Enter Product Image URL"
+    />
+    <button class="form-button">Add product</button>
+
+  </form>
+</div>

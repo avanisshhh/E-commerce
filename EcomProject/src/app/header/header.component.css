@@ -3,7 +3,8 @@
     display: flex;
     justify-content: space-between;
 }
-element.style{
+
+element.style {
     margin-top: 5px;
     flex: 1;
     display: flex;
@@ -17,34 +18,67 @@ element.style{
     font-size: 40px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-.nav ul{
+
+.nav ul {
     display: inline-flex;
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
-.nav li{
+
+.nav li {
     padding-top: 15px;
     padding-left: 15px;
 }
-.nav a{
+
+.nav a {
     text-decoration: none;
     color: blueviolet;
 }
-.nav-search{
+
+.nav-search {
     margin-top: 12px;
+
+    width: 50% !important;
 }
-.nav nav-search input{
+
+.nav-search input {
     flex: 1;
-    color:blueviolet;
+    color: blueviolet;
     border: 1px solid blueviolet;
-    height: 39px;
-    border-right: 0px;
+    border-radius: 5px 0px 0px 5px;
+    height: 40px;
+    width: 70% !important;
+
+    /* border-right: 0px; */
 }
-.nav nav-search button{
+
+.nav-search button {
     flex: 1;
-    color:blueviolet;
+    border-radius: 0px 5px 5px 0px;
+    color: blueviolet;
     border: 1px solid blueviolet;
     height: 40px;
     border-left: 0px;
+}
+
+.suggested-result {
+    position: absolute;
+    display: list-item !important;
+    z-index: 15;
+    background-color: #fff;
+    width: 300px;
+    top: 40px;
+    border: 1px solid #ddd;
+}
+
+.suggested-result li {
+    border: 1px solid #ddd;
+    padding: 5px;
+
+}
+
+.suggested-result li a {
+    cursor: pointer;
+    color: blue;
 }
