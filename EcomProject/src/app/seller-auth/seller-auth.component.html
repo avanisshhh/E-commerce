@@ -1,27 +1,69 @@
 <div class="seller-auth">
   <div *ngIf="!showLogin" class="signup">
     <h1>Seller SignUp</h1>
-    <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value)" action=" " class="common-form">
-      <input class="form-input" ngModel name="name" type="text" placeholder="Enter your Name" />
-      <input class="form-input" ngModel name="password" type="password" placeholder="Enter your password" />
-      <input class="form-input" ngModel name="email" type="text" placeholder="Enter your Email" />
+    <form
+      #sellerSignUp="ngForm"
+      (ngSubmit)="signUp(sellerSignUp.value)"
+      action=" "
+      class="common-form"
+    >
+      <input
+        class="form-input"
+        ngModel
+        name="name"
+        type="text"
+        placeholder="Enter your Name"
+      />
+      <input
+        class="form-input"
+        ngModel
+        name="password"
+        type="password"
+        placeholder="Enter your password"
+      />
+      <input
+        class="form-input"
+        ngModel
+        name="email"
+        type="text"
+        placeholder="Enter your Email"
+      />
       <button class="form-button">Sign Up</button>
-      <a href="" class="auth-toggle-link" (click)="openLogin()">Already have account? Click to Log In</a>
+      <a href="" class="auth-toggle-link" (click)="openLogin()"
+        >Already have account? Click to Log In</a
+      >
     </form>
   </div>
-
 
   <!-- Login Area -->
   <div *ngIf="!showLogin" class="signup">
     <h1>Seller Login</h1>
-    <p class="error-p">{{authError}}</p>
-    <form #sellerLogin="ngForm" (ngSubmit)="Login(sellerLogin.value)" action=" " class="common-form">
-      <input class="form-input" ngModel name="email" type="text" placeholder="Enter your Email" />
-      <input class="form-input" ngModel name="password" type="password" placeholder="Enter your password" />
+    <p class="error-p">{{ authError }}</p>
+    <form
+      #sellerLogin="ngForm"
+      (ngSubmit)="Login(sellerLogin.value)"
+      action=" "
+      class="common-form"
+    >
+      <input
+        class="form-input"
+        ngModel
+        name="email"
+        type="text"
+        placeholder="Enter your Email"
+      />
+      <input
+        class="form-input"
+        ngModel
+        name="password"
+        type="password"
+        placeholder="Enter your password"
+      />
 
       <button class="form-button">Log In</button>
-      <a href="" class="auth-toggle-link" (click)="openSignUp()">Don't have account? Click to Sign Up here </a>
-
+      <a href="" class="auth-toggle-link" (click)="openSignUp()"
+        >Don't have account? Click to Sign Up here
+      </a>
     </form>
   </div>
 </div>

@@ -3,16 +3,17 @@
 
   <div *ngIf="menuType === 'default'" class="nav-search">
     <input
+      #searchInput
       type="text"
       (keyup)="searchProduct($event)"
       (blur)="hideSearch()"
       class="type"
       placeholder="Search for Project.. "
     />
-    <button>Search</button>
+    <button (click)="submitSearch(searchInput.value)">Search</button>
     <ul class="suggested-result" *ngIf="searchResult">
       <li *ngFor="let item of searchResult">
-        <a href="">{{ item.name }}</a>
+        <a (mousedown)="redirectToDetails(item.id)">{{ item.name }}</a>
       </li>
     </ul>
   </div>

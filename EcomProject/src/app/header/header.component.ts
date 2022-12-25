@@ -18,15 +18,15 @@ export class HeaderComponent implements OnInit {
       if (val.url) {
         console.warn(val.url);
         if (localStorage.getItem('seller') && val.url.includes('seller')) {
-          console.warn('in seller area');
+          //console.warn('in seller area');
           this.menuType = 'seller';
           if (localStorage.getItem('seller')) {
             let sellerStore = localStorage.getItem('seller');
-            let sellerData = sellerStore && JSON.parse(sellerStore)[0]; //convert string to json object
+            let sellerData = sellerStore && JSON.parse(sellerStore)[0]; //convert json string to json object
             this.sellerName = sellerData.name;
           }
         } else {
-          console.warn('outside seller');
+          //console.warn('outside seller');
           this.menuType = 'default';
         }
       }
@@ -39,10 +39,10 @@ export class HeaderComponent implements OnInit {
 
   searchProduct(query: KeyboardEvent) {
     if (query) {
-      const element = query.target as HTMLInputElement;
+      const element = query.target as HTMLInputElement; //
 
       this.product.searchProducts(element.value).subscribe((result) => {
-        console.warn(result, 'search result');
+        //console.warn(result, 'search result');
         this.searchResult = result;
         if (result.length > 5) {
           result.length = 5;
@@ -52,5 +52,13 @@ export class HeaderComponent implements OnInit {
   }
   hideSearch() {
     this.searchResult = undefined;
+  }
+
+  submitSearch(val: string) {
+    console.warn(val);
+    this.route.navigate([`search/${val}`]);
+  }
+  redirectToDetails(id: number) {
+    this.route.navigate([`/details/${id}`]);
   }
 }

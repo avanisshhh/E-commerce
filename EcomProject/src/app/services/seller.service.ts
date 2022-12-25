@@ -12,22 +12,19 @@ export class SellerService {
   isLoginError = new EventEmitter<boolean>(false);
   constructor(private http: HttpClient, private router: Router) {}
   userSignUp(data: signUp) {
-  
     this.http
       .post<any>('http://localhost:3000/seller', data, { observe: 'response' })
       .subscribe((result) => {
         console.warn('result', result);
         if (result) {
           //this.isSellerLoggedIn.next(true);
-          localStorage.setItem('seller', JSON.stringify(result.body));
+          localStorage.setItem('seller', JSON.stringify(result.body)); //Converts a JavaScript value to a JavaScript Object Notation (JSON) string.
           this.router.navigate(['seller-home']);
           //redirect the value when data came
         }
-
-        
       });
   }
-  
+
   reloadSeller() {
     if (localStorage.getItem('seller')) {
       this.isSellerLoggedIn.next(true);
@@ -41,13 +38,13 @@ export class SellerService {
         { observe: 'response' }
       )
       .subscribe((result: any) => {
-        if (result && result.body && result.body.length===1) {
-          console.warn('user logged in');
-          localStorage.setItem('seller',JSON.stringify(result.body));
+        if (result && result.body && result.body.length === 1) {
+          //console.warn('user logged in');
+          localStorage.setItem('seller', JSON.stringify(result.body));
           this.isSellerLoggedIn.next(true);
           this.router.navigate(['seller-home']);
         } else {
-          console.warn('login failed');
+          //console.warn('login failed');
           this.isLoginError.emit(true);
         }
       });
