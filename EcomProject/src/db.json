@@ -132,6 +132,30 @@
       "email": "tony@user.com",
       "password": "abc123",
       "id": 4
+    },
+    {
+      "name": "ami",
+      "email": "ami123@gmail.com",
+      "password": "abc@123",
+      "id": 5
+    },
+    {
+      "name": "nazo",
+      "email": "nazo123@gmail.com",
+      "password": "abc@123",
+      "id": 6
+    },
+    {
+      "name": "bruce",
+      "email": "bruce123@gmail.com",
+      "password": "abc@123",
+      "id": 7
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 8
     }
   ],
   "cart": [
