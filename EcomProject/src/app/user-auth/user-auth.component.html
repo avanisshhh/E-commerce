@@ -13,9 +13,13 @@
   <div *ngIf="showLogin" class="user-login">
     <h1>User Login</h1>
     <form class="common-form" action="" #userLogin="ngForm" (ngSubmit)="login(userLogin.value)">
-      <input class="form-input" type="email" placeholder="Enter User Email" name="email" ngModel />
-      <input class="form-input" type="password" placeholder="Enter User password" name="password" ngModel />
-      <button class="form-button">Login</button>
+      <p class="error-p">{{authError}}</p>
+      <input class="form-input" type="email" #email="ngModel" required email placeholder="Enter User Email" name="email" ngModel />
+      <p class="invalid-input"><span *ngIf="email.invalid && email.touched">Please enter your Email</span></p>
+      <input class="form-input" type="password" #password="ngModel" required minlength="5" maxlength="10" placeholder="Enter User password" name="password" ngModel />
+      <p class="invalid-input"><span *ngIf="password.invalid && password.touched">Please enter your password</span></p>
+
+      <button [disabled]="userLogin.invalid" class="form-button">Login</button>
       <a href="" class="auth-toggle-link" (click)="openSignUp()">Don't have account ? Click to Sign Up here</a>
     </form>
   </div>
