@@ -16,5 +16,6 @@ export interface product{
     color:String;
     description:string;
     image:string;
-
+    quantity:number|undefined;
+    //productId:undefined|number;
 }

@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
   menuType = 'default';
   sellerName = '';
   userName: string = '';
+  cartItems=0;
   ngOnInit(): void {
     this.route.events.subscribe((val: any) => {
       if (val.url) {
@@ -37,6 +38,16 @@ export class HeaderComponent implements OnInit {
         }
       }
     });
+
+    //For cart item numbers/items
+    let cartData=localStorage.getItem('localCart');
+    if(cartData){
+      this.cartItems=JSON.parse(cartData).length;
+    }
+    this.product.cartData.subscribe((items) => {
+      this.cartItems=items.length
+    })
+    
   }
   logout() {
     localStorage.removeItem('seller');
