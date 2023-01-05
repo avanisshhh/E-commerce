@@ -10,8 +10,8 @@ export class UserService {
   invalidUser=new EventEmitter<boolean>(false);
 
   constructor(private http: HttpClient, private route: Router) { }
+  
   userSignUp(data: signUp) {
-
     this.http.post<signUp>('http://localhost:3000/users', data, { observe: 'response' }).subscribe((result) => {
       console.warn(result);
       if (result) {
