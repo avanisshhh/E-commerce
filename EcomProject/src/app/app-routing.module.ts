@@ -42,7 +42,7 @@ const routes: Routes = [
   },
   {
     component: ProductDetailsComponent,
-    path: 'details/:id',    
+    path: 'details/:productId',  //this same id we'll use in fetching from comp  
     
   },
   {

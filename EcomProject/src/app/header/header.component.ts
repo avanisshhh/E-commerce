@@ -52,6 +52,7 @@ export class HeaderComponent implements OnInit {
   logout() {
     localStorage.removeItem('seller');
     this.route.navigate(['/']);
+    this.product.cartData.emit([]); //to empty data on logout
   }
   userLogOut(){
     localStorage.removeItem('user');

@@ -13,7 +13,7 @@ export class UserService {
   
   userSignUp(data: signUp) {
     this.http.post<signUp>('http://localhost:3000/users', data, { observe: 'response' }).subscribe((result) => {
-      console.warn(result);
+      //console.warn(result);
       if (result) {
         localStorage.setItem('user', JSON.stringify(result.body))
         this.route.navigate(['/']);
@@ -31,7 +31,7 @@ export class UserService {
     this.http.get<signUp[]>(`http://localhost:3000/users?email=${data.email}&password=${data.password}`, { observe: 'response' })
       .subscribe((result) => {
         if (result && result.body?.length) {
-          console.warn(result);
+          //console.warn(result);
           this.invalidUser.emit(false)
           localStorage.setItem('user',JSON.stringify(result.body[0]))
           this.route.navigate(['/']);

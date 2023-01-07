@@ -47,6 +47,7 @@ export class ProductService {
      let localCart=localStorage.getItem('localCart');
      if(!localCart){
       localStorage.setItem('localCart',JSON.stringify([data]));
+      this.cartData.emit([data]); //to add data to cart(list) when not logged in
      }
      else{ 
       //if some data is already present in local storage than this call happend and here
@@ -71,8 +72,20 @@ export class ProductService {
   }
   addToCart(cartData:cart){
     return this.http.post('http://localhost:3000/cart', cartData);
+  }
 
-
+  getCartList(userId:number){
+    console.log("userid check,",userId);
+    
+    return this.http
+    .get<product[]>('http://localhost:3000/cart?userId=' + userId, {
+      observe: 'response',
+    })
+    .subscribe((result) => {
+      if (result && result.body) {
+        this.cartData.emit(result.body);
+      }
+    });
   }
 }
 

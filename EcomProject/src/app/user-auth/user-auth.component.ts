@@ -11,7 +11,7 @@ import { UserService } from '../services/user.service';
 export class UserAuthComponent implements OnInit {
   showLogin: boolean = true;
   authError: string = '';
-  constructor(private user: UserService, private product: ProductService) {}
+  constructor(private user: UserService, private product: ProductService) { }
   ngOnInit(): void {
     this.user.userAuthReload();
   }
@@ -22,11 +22,14 @@ export class UserAuthComponent implements OnInit {
   login(data: login) {
     this.user.userLogin(data);
     this.user.invalidUser.subscribe((result) => {
-      console.warn('User Login Result AAA', result);
+      //console.warn('User Login Result', result);
       if (result) {
         this.authError = 'Please enter valid user details.';
       } else {
-        this.localCartToRemoteCart();
+        setTimeout(()=>{
+          this.localCartToRemoteCart();
+        },300)
+        
       }
     });
   }
@@ -39,11 +42,11 @@ export class UserAuthComponent implements OnInit {
 
   localCartToRemoteCart() {
     let data = localStorage.getItem('localCart');
+    let user = localStorage.getItem('user');
+    let userId = user && JSON.parse(user).id;
     if (data) {
       let cartDataList: product[] = JSON.parse(data);
-      let user = localStorage.getItem('user');
-      let userId = user && JSON.parse(user).id;
-      cartDataList.forEach((product: product,index) => {
+      cartDataList.forEach((product: product, index) => {
         let cartData: cart = {
           ...product,
           productId: product.id,
@@ -55,13 +58,16 @@ export class UserAuthComponent implements OnInit {
             if (result) {
               console.warn('Item stored in Db');
             }
-            if(cartDataList.length===index+1){
-              localStorage.removeItem('localCart');
-            }
-
           });
+          if (cartDataList.length === index + 1) {
+            localStorage.removeItem('localCart');
+          }
         }, 500);
+      
       });
     }
-  }
+    setTimeout(() => {
+      this.product.getCartList(userId);
+    }, 2000)
+  } 
 }
