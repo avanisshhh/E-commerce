@@ -73,7 +73,7 @@ export class ProductService {
   addToCart(cartData:cart){
     return this.http.post('http://localhost:3000/cart', cartData);
   }
-
+//call list of item when user login 
   getCartList(userId:number){
     console.log("userid check,",userId);
     
@@ -86,6 +86,12 @@ export class ProductService {
         this.cartData.emit(result.body);
       }
     });
+  }
+  //remove to cart API
+  removeToCart(cartId: number){
+    return this.http.delete('http://localhost:3000/cart/'+cartId);
+
+
   }
 }
 

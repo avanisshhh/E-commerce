@@ -32,6 +32,7 @@ export class HeaderComponent implements OnInit {
           let userData = userStore && JSON.parse(userStore);
           this.userName = userData.name;
           this.menuType = 'user';
+          this.product.getCartList(userData.id); //to load page properly with data
         } else {
           //console.warn('outside seller');
           this.menuType = 'default';
@@ -47,7 +48,7 @@ export class HeaderComponent implements OnInit {
     this.product.cartData.subscribe((items) => {
       this.cartItems=items.length
     })
-    
+   
   }
   logout() {
     localStorage.removeItem('seller');

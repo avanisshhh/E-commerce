@@ -160,40 +160,16 @@
   ],
   "cart": [
     {
-      "name": "I phone 14",
-      "price": "100000",
+      "name": "Samsung m 40 a ",
+      "price": "550",
       "category": "mobile",
-      "color": "black",
-      "description": "An Apple Product",
-      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSOO1JDPUNwcPiqzHYhaL_zpJA0Ymlr6mD9sSgTPad_JYdrk-o",
-      "quantity": 1,
-      "productId": 2,
-      "userId": 4,
-      "id": 1
-    },
-    {
-      "name": "Levies Jeans",
-      "price": "5000",
-      "category": "Jeans",
-      "color": "blue",
-      "description": "Confirmable jeans for man ",
-      "image": "https://www.filmibeat.com/wimg/desktop/2012/12/13548612746596.jpg",
-      "quantity": 1,
-      "productId": 5,
-      "userId": 4,
-      "id": 2
-    },
-    {
-      "name": "Truck",
-      "price": "Toy",
-      "category": "Toys",
-      "color": "Red",
-      "description": "A toy for 5 year old child",
-      "image": "https://cdn.shopify.com/s/files/1/0011/8367/8476/products/Truck2_1400x.png?v=1662789388",
+      "color": "white",
+      "description": "this is a Samsung product",
+      "image": "https://images.samsung.com/is/image/samsung/in-galaxy-m21-m215f-6gb-sm-m215flbgins--Back-Light-Blue-Front-3000x2000-316691196?scl=1&fmt=png-alpha",
       "quantity": 1,
       "userId": 4,
-      "productId": 6,
-      "id": 3
+      "productId": 1,
+      "id": 4
     }
   ],
   "orders": [

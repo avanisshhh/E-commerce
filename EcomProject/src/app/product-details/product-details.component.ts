@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, TitleStrategy } from '@angular/router';
 import { cart, product } from '../data-type';
 import { ProductService } from '../services/product.service';
 
@@ -82,7 +82,7 @@ export class ProductDetailsComponent implements OnInit {
         console.warn(cartData);
         this.product.addToCart(cartData).subscribe((result) => {
           if (result) {
-            console.log('Product added to Cart', userId);
+            //console.log('Product added to Cart', userId);
             this.product.getCartList(userId);
             this.removeCart = true;
           }
@@ -94,8 +94,21 @@ export class ProductDetailsComponent implements OnInit {
     }
   }
   removeToCart(productId: number) {
-    this.product.removeItemFromCart(productId);
-    this.removeCart = false;
+    if (!localStorage.getItem('user')) {    //when user is not logged in remove work from it
+      this.product.removeItemFromCart(productId);
 
+    }
+    else {
+      let user = localStorage.getItem('user');
+      let userId = user && JSON.parse(user).id;
+      this.cartData && this.product.removeToCart(this.cartData?.id).subscribe((result) => {
+        if (result) {
+          this.product.getCartList(userId);
+        }
+      })
+      console.warn(this.cartData);
+
+    }
+    this.removeCart = false;
   }
 }
