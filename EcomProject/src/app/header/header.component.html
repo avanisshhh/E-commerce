@@ -29,7 +29,7 @@
       <li><a routerLink="">Home</a></li>
       <li><a routerLink="/user-auth">{{userName |titlecase}}</a></li>
       <li><a (click)="userLogOut()" style="cursor:pointer">Log Out</a></li>
-      <li><a href="">Cart ({{cartItems}}) </a></li>
+      <li><a routerLink="cart-page">Cart ({{cartItems}}) </a></li>
     </ul>
     <ul *ngSwitchCase="'seller'">
       <li><a routerLink="seller-home"> List</a></li>

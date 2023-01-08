@@ -160,16 +160,16 @@
   ],
   "cart": [
     {
-      "name": "Samsung m 40 a ",
-      "price": "550",
-      "category": "mobile",
-      "color": "white",
-      "description": "this is a Samsung product",
-      "image": "https://images.samsung.com/is/image/samsung/in-galaxy-m21-m215f-6gb-sm-m215flbgins--Back-Light-Blue-Front-3000x2000-316691196?scl=1&fmt=png-alpha",
-      "quantity": 1,
+      "name": "Nike Shoes",
+      "price": "3000",
+      "category": "Shoes",
+      "color": "Black",
+      "description": "Best shoes for Running",
+      "image": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/1eeaacc0-e07c-4024-a5f7-57f2fd23e8a2/air-max-270-g-golf-shoe-Z6vCfs.png",
+      "quantity": 3,
       "userId": 4,
-      "productId": 1,
-      "id": 4
+      "productId": 4,
+      "id": 1
     }
   ],
   "orders": [
