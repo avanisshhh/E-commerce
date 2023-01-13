@@ -174,20 +174,12 @@
   ],
   "orders": [
     {
-      "email": "anil@user.com",
-      "address": "noida sector x",
-      "contact": "9999",
-      "totalPrice": 104750,
-      "userId": 1,
+      "email": "Avi",
+      "address": "avanish@gmail.com",
+      "contact": "9889898987",
+      "totalPrice": 9100,
+      "userId": 4,
       "id": 1
-    },
-    {
-      "email": "anil@test.com",
-      "address": "noida sector x",
-      "contact": "8877",
-      "totalPrice": 6100,
-      "userId": 1,
-      "id": 3
     }
   ]
 }
