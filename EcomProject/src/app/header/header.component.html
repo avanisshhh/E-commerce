@@ -1,7 +1,7 @@
 <nav class="nav">
   <h1><a routerLink="/">E-Comm</a></h1>
 
-  <div *ngIf="menuType === 'default'" class="nav-search">
+  <div *ngIf="menuType!= 'seller' " class="nav-search">
     <input
       #searchInput
       type="text"
@@ -28,8 +28,9 @@
       <li><a routerLink="user-auth">User</a></li>
       <li><a routerLink="">Home</a></li>
       <li><a routerLink="/user-auth">{{userName |titlecase}}</a></li>
+      <li><a routerLink="/my-orders">My Orders</a></li>
       <li><a (click)="userLogOut()" style="cursor:pointer">Log Out</a></li>
-      <li><a routerLink="cart-page">Cart ({{cartItems}}) </a></li>
+      <li><a [routerLink]="cartItems>0?'cart-page':null">Cart ({{cartItems}}) </a></li>
     </ul>
     <ul *ngSwitchCase="'seller'">
       <li><a routerLink="seller-home"> List</a></li>

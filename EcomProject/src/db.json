@@ -161,14 +161,6 @@
   "cart": [],
   "orders": [
     {
-      "email": "Avi",
-      "address": "avanish@gmail.com",
-      "contact": "9889898987",
-      "totalPrice": 9100,
-      "userId": 4,
-      "id": 1
-    },
-    {
       "email": "avanish",
       "address": "avanish@",
       "contact": "1234",
@@ -183,14 +175,6 @@
       "totalPrice": 9100,
       "userId": 4,
       "id": 3
-    },
-    {
-      "email": "asd",
-      "address": "noida sec",
-      "contact": "3333",
-      "totalPrice": 56100,
-      "userId": 4,
-      "id": 4
     }
   ]
 }

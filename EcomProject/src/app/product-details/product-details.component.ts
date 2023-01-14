@@ -96,7 +96,6 @@ export class ProductDetailsComponent implements OnInit {
   removeToCart(productId: number) {
     if (!localStorage.getItem('user')) {    //when user is not logged in remove work from it
       this.product.removeItemFromCart(productId);
-
     }
     else {
       let user = localStorage.getItem('user');
