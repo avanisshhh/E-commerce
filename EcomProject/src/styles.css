@@ -14,9 +14,11 @@ body{
     margin: auto;
     flex-direction: column;
     width: 300px;
-
-
 }
+.message-p{
+    color: green;
+    text-align: center;
+  }
 .form-input{
     height: 35px;
     margin-bottom: 20px;
